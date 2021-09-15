@@ -21,7 +21,7 @@ public class Factorial {
         return n;
     }
 
-    public static void main(String[] argc)
+    public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите число n");

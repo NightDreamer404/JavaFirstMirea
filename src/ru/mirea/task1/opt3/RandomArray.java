@@ -28,7 +28,7 @@ public class RandomArray {
             System.out.print(arr[i] + " ");
         }
     }
-    public static void main(String[] argc)
+    public static void main(String[] args)
     {
         int[] arr = new int[10];
 

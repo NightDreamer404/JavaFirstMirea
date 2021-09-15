@@ -2,7 +2,7 @@ package ru.mirea.task1.opt3;
 import java.lang.*;
 import java.util.Scanner;
 public class ArraySum {
-    public static void main(String[] argc) {
+    public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         System.out.println("Введите размерность массива");
         int n = read.nextInt();
