@@ -30,20 +30,6 @@ public abstract class Dog {
     public abstract void displayInfo();
 }
 
-class Chiuaua extends Dog
-{
-    private String homeCountry;
-    public Chiuaua(int maxAge, int maxWeight, String name, String homeCountry)
-    {
-        super(maxAge, maxWeight, name);
-        this.homeCountry = homeCountry;
-    }
-    public void displayInfo()
-    {
-        System.out.println("Имя: " + super.getName() + " Максимальный возраст: " + super.getMaxAge() + " Максимальный вес: " + super.getMaxWeight() + " Родная страна: " + homeCountry);
-    }
-}
-
 class Chihuahua extends Dog
 {
     private String homeCountry;
