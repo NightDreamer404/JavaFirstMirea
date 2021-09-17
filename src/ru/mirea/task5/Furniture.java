@@ -31,7 +31,7 @@ class Chair extends Furniture
 
     public void displayInfo()
     {
-        System.out.println("Размер: " + super.getSize() + ", материал " + super.getMaterial() + " макс. нагрузка: " + peakLoad);
+        System.out.println("Кресло:: Размер: " + super.getSize() + ", материал: " + super.getMaterial() + ", макс. нагрузка: " + peakLoad);
     }
 }
 
@@ -44,7 +44,10 @@ class Sofa extends Furniture
         super(size, material, status);
         this.upholstery = upholstery;
     }
-    public void displayInfo(){}
+    public void displayInfo()
+    {
+        System.out.println("Диван:: Размер: " + super.getSize() + ", материал каркаса: " + super.getMaterial() + ", обивка: " + upholstery);
+    }
 }
 
 class Dresser extends Furniture     //комод
@@ -56,5 +59,8 @@ class Dresser extends Furniture     //комод
         super(size, material, status);
         this.drawersAmount = drawersAmount;
     }
-    public void displayInfo(){}
+    public void displayInfo()
+    {
+        System.out.println("Комод:: Размер: " + super.getSize() + ", материал: " + super.getMaterial() + ", кол-во ящиков: " + drawersAmount);
+    }
 }
