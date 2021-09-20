@@ -3,13 +3,13 @@ import java.lang.*;
 public class TestShape {
     public static void main(String[] args)
     {
-       /* Shape s1 = new Circle(5.5, "RED", false); // Upcast Circle to Shape
+        Shape s1 = new Circle(5.5, "RED", false); // Upcast Circle to Shape
         System.out.println(s1); // which version?
         System.out.println(s1.getArea()); // which version?
         System.out.println(s1.getPerimeter()); // which version?
         System.out.println(s1.getColor());
         System.out.println(s1.isFilled());
-        System.out.println(s1.getRadius());
+        //System.out.println(s1.getRadius()); //в классе Shape отсутствует метод getRadius()
         Circle c1 = (Circle)s1; // Downcast back to Circle
         System.out.println(c1);
         System.out.println(c1.getArea());
@@ -23,7 +23,7 @@ public class TestShape {
         System.out.println(s3.getArea());
         System.out.println(s3.getPerimeter());
         System.out.println(s3.getColor());
-        System.out.println(s3.getLength());
+        //System.out.println(s3.getLength()); //в классе Shape отсутствует метод getLength()
         Rectangle r1 = (Rectangle)s3; // downcast
         System.out.println(r1);
         System.out.println(r1.getArea());
@@ -33,14 +33,14 @@ public class TestShape {
         System.out.println(s4);
         System.out.println(s4.getArea());
         System.out.println(s4.getColor());
-        System.out.println(s4.getSide());
+        //System.out.println(s4.getSide()); //в классе Shape отсутствует метод getSide()
         // Take note that we downcast Shape s4 to Rectangle,
         // which is a superclass of Square, instead of Square
         Rectangle r2 = (Rectangle)s4;
         System.out.println(r2);
         System.out.println(r2.getArea());
         System.out.println(r2.getColor());
-        System.out.println(r2.getSide());
+       // System.out.println(r2.getSide()); //в классе Rectangle отсутствует метод getSide()
         System.out.println(r2.getLength());
         // Downcast Rectangle r2 to Square
         Square sq1 = (Square)r2;
@@ -50,6 +50,6 @@ public class TestShape {
         System.out.println(sq1.getSide());
         System.out.println(sq1.getLength());
 
-        */
+
     }
 }
