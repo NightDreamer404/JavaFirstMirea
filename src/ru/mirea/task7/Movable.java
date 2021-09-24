@@ -82,7 +82,7 @@ class MovableRectangle implements Movable
         if(xSpeed != ySpeed)
         {
             ySpeed = xSpeed;
-            System.out.println("Скорости по x и y не равны, произведен перерасчет скорости y по скорости x");
+            System.out.println("Скорости по x и y не равны, производится перерасчет скорости y по скорости x");
             System.out.println('\n');
         }
         topLeft = new MovablePoint(x1, y1, xSpeed, ySpeed);

@@ -11,7 +11,7 @@ public class MovableTest {
         System.out.println(circle1);
         System.out.println('\n');
 
-        MovableRectangle rectangle1 = new MovableRectangle(1, 4, 0,0,4,3);
+        MovableRectangle rectangle1 = new MovableRectangle(1, 4, 0,0,4,2);
         System.out.println(rectangle1);
         rectangle1.moveLeft();
         System.out.println(rectangle1);
