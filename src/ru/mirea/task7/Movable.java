@@ -1,10 +1,10 @@
 package ru.mirea.task7;
 import java.lang.*;
 public interface  Movable {
-    public void moveUp();
-    public void moveDown();
-    public void moveLeft();
-    public void moveRight();
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
 }
 
 class MovablePoint implements Movable {
@@ -23,22 +23,22 @@ class MovablePoint implements Movable {
 
     public void moveUp()
     {
-        this.y += 1 * this.ySpeed;
+        this.y += this.ySpeed;
     }
 
     public void moveDown()
     {
-        this.y -= 1 * this.ySpeed;
+        this.y -= this.ySpeed;
     }
 
     public void moveLeft()
     {
-        this.x -= 1 * this.xSpeed;
+        this.x -= this.xSpeed;
     }
 
     public void moveRight()
     {
-        this.x += 1 * this.xSpeed;
+        this.x += this.xSpeed;
     }
 
     public String toString()
@@ -58,28 +58,47 @@ class MovableCircle implements Movable
        this.radius = radius;
     }
 
-    public void moveUp()
-    {
-        this.center.y += 1 * this.center.ySpeed;
-    }
+    public void moveUp() { center.moveUp(); }
 
-    public void moveDown()
-    {
-        this.center.y -= 1 * this.center.ySpeed;
-    }
+    public void moveDown() { center.moveDown(); }
 
-    public void moveLeft()
-    {
-        this.center.x -= 1 * this.center.xSpeed;
-    }
+    public void moveLeft() { center.moveLeft(); }
 
-    public void moveRight()
-    {
-        this.center.x += 1 * this.center.xSpeed;
-    }
+    public void moveRight() { center.moveRight(); }
 
     public String toString()
     {
         return "Окружность:: радиус: " + radius + ", координата x центра: " + center.x + ", координата y центра: " + center.y;
+    }
+}
+
+class MovableRectangle implements Movable
+{
+    private MovablePoint topLeft;
+    private MovablePoint bottomRight;
+
+    public MovableRectangle (int x1, int y1, int x2, int y2, int xSpeed, int ySpeed)
+    {
+        if(xSpeed != ySpeed)
+        {
+            ySpeed = xSpeed;
+            System.out.println("Скорости по x и y не равны, произведен перерасчет скорости y по скорости x");
+            System.out.println('\n');
+        }
+        topLeft = new MovablePoint(x1, y1, xSpeed, ySpeed);
+        bottomRight = new MovablePoint(x2, y2, xSpeed, ySpeed);
+    }
+
+    public void moveUp() { topLeft.moveUp(); bottomRight.moveUp(); }
+
+    public void moveDown() { topLeft.moveDown(); bottomRight.moveDown(); }
+
+    public void moveLeft() { topLeft.moveLeft(); bottomRight.moveLeft(); }
+
+    public void moveRight() { topLeft.moveRight(); bottomRight.moveRight();}
+
+    public String toString()
+    {
+        return "Прямоугольник:: Верхняя левая " + topLeft + ", Нижняя правая " + bottomRight;
     }
 }
