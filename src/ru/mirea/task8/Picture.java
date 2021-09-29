@@ -10,10 +10,12 @@ public class Picture {
         }
 
 
-        JFrame frame = new JFrame("PictureFrame"); //создание окна с рамкой
-        //frame.add(new JLabel(new ImageIcon("D:/test/aboba.jpg")));
+        JFrame frame = new JFrame("PictureFrame");  //создание окна с рамкой
+        ImageIcon img = new ImageIcon(imageFile);   //создаём объект, хранящий картинку
+        JLabel label = new JLabel(img); //создаем лейбл c картинкой
+        frame.add(label);   //добавляем лейбл с картинкой к окну
+        //"D:/test/pic.jpg"
 
-        frame.add(new JLabel(new ImageIcon(imageFile))); //добавляем лейбл с нашей картинкой
         frame.setSize(512, 512); //выставляем размер окна
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //программа прекратит выполнение при закрытии окна
         frame.setVisible(true);
