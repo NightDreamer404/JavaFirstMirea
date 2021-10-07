@@ -64,18 +64,18 @@ public class Game extends JFrame
 
     public class pressActionListenerFir implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            label2.setText(" ");
+            panel2.add(label1);
 
-            frame.getContentPane().add(panel2);
+            panel2.add(button2);
+            panel2.add(textEditor);
+            panel2.add(label2);
+            label1.setText("Попыток: " +  attempts);
             label2.setFont(new Font("Arial", Font.PLAIN, 16));
             button1.hide();
             label3.hide();
-            panel2.add(label1);
-            panel2.add(button2);
-            label1.setText("Попыток: " +  attempts);
+            frame.getContentPane().add(panel2);
 
-
-            panel2.add(textEditor);
-            panel2.add(label2);
         }
     }
 
