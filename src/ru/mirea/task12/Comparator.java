@@ -60,7 +60,7 @@ class SortingStudentsByGPA implements Comparator {
         double[] GPA = new double[stud.length];
         for (int i = 0; i < stud.length; i++)
         {
-            double ranNum = (2 + Math.random()*4);
+            double ranNum = (2 + Math.random()*3);
             ranNum = (double)Math.round(ranNum * 100d) / 100d;
             stud[i] = new Students(ranNum);
         }
