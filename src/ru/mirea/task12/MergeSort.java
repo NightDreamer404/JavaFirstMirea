@@ -48,26 +48,28 @@ public class MergeSort {
         ArrayList<StudentsData> left = new ArrayList<>();
         ArrayList<StudentsData> right = new ArrayList<>();
         int center;
-
+        //если изначальный список из одного символа
         if (whole.size() == 1) {
             return whole;
         } else {
-            center = whole.size()/2;
-            // copy the left half of whole into the left.
+            center = whole.size()/2;        //найдем серединку списка
+            // копируем левую половину исходного списка в список left
             for (int i=0; i<center; i++) {
                 left.add(whole.get(i));
             }
 
-            //copy the right half of whole into the new arraylist.
+            //аналогично с правой частью
             for (int i=center; i<whole.size(); i++) {
                 right.add(whole.get(i));
             }
 
-            // Sort the left and right halves of the arraylist.
+            // рекурсией закидываем поделенные обе части обратно в наш метод, он будет крутится до тех пор,
+            // пока не дойдет до 1 элемента в списке, после чего вернется в строку и будет искать второй такой же,
+            // точнее правую часть от него и опять вернет его назад
             left  = mergeSort(left);
             right = mergeSort(right);
 
-            // Merge the results back together.
+            // Собираем результат.
             merge(left, right, whole, sortingParameter);
 
         }
@@ -139,16 +141,16 @@ public class MergeSort {
         ArrayList<StudentsData> rest;
         int restIndex;
         if (leftIndex >= left.size()) {
-            // The left ArrayList has been use up...
+            // Если левый список был израсходован
             rest = right;
             restIndex = rightIndex;
         } else {
-            // The right ArrayList has been used up...
+            // Если правый список массивов был израсходован
             rest = left;
             restIndex = leftIndex;
         }
 
-        // Copy the rest of whichever ArrayList (left or right) was not used up.
+        // Переносим оставшийся не использованный список.
         for (int i=restIndex; i<rest.size(); i++) {
             whole.set(wholeIndex, rest.get(i));
             wholeIndex++;
