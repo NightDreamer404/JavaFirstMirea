@@ -30,7 +30,7 @@ public class ArrayListTest {
     {
         for(int i = 0; i < list.size(); i++)
         {
-            System.out.println(list.get(i).toString());
+            System.out.println(list.get(i).toString());     //0 - получение элемента списка
         }
         System.out.println("\n");
     }
@@ -51,10 +51,10 @@ public class ArrayListTest {
             list.add(student);
         }
 
-//1 вывод списка
-        System.out.println("Исходный список");
-        output(list);
-
+//1 вывод элемента списка
+        System.out.println("1-й элемент списка");
+        System.out.println(list.get(0));
+        System.out.println("\n");
 //2 - добавление в конец списка
         list.add(new StudentsData("Егор", 4.1, 1372));
         System.out.println("Добавили в конец");
@@ -65,21 +65,20 @@ public class ArrayListTest {
         System.out.println("Добавили на 4-е место");
         output(list);
 
-//4 - клонирование списка
-        ArrayList<StudentsData> clonedList = (ArrayList<StudentsData>) list.clone();
+//4 - замена элемента списка
+        list.set(0, new StudentsData("Илья", 2, 175));
         System.out.println("Клонированный список");
-        list.clear();
-        output(clonedList);
+        output(list);
 
 //5 - удаление элементов
-        clonedList.remove(3);
-        clonedList.remove(4);
+        list.remove(3);
+        list.remove(4);
         System.out.println("Последние два элемента удалены");
-        output(clonedList);
+        output(list);
 
 //6 - очистка списка
-        clonedList.clear();
+        list.clear();
         System.out.println("Список очищен");
-        output(clonedList);
+        System.out.println("Размер списка: " + list.size());  //7 - получение размера списка
     }
 }
