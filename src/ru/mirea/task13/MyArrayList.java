@@ -24,7 +24,7 @@ class StudentData
 public class MyArrayList <T>{
     private final int INIT_SIZE = 64;   //фиксируем размер (потом будет увеличен при необходимости)
     private Object[] array = new Object[INIT_SIZE];     //массив данного типа может принимать объекты классов (как и оригинальный ArrayList)
-    private int itemPointer = 0;        //(фактически переменная для сохранения размера списка
+    private int itemPointer = 0;        //фактически переменная для сохранения размера списка
 
     public void add(T Elem)
     {
@@ -38,7 +38,7 @@ public class MyArrayList <T>{
     {
         if(index >= itemPointer)
         {
-            System.out.println("NullPointerException has been detected");
+            System.out.println("IndexOutOfBoundsException has been detected");
             exit(1);
         }
         if( itemPointer == (array.length - 1) )     //см. пред метод
@@ -52,6 +52,11 @@ public class MyArrayList <T>{
     }
     public void remove(int index)
     {
+        if(index >= itemPointer)
+        {
+            System.out.println("IndexOutOfBoundsException has been detected");
+            exit(1);
+        }
         for (int i = index; i < itemPointer; i++) {
             array[i] = array[i + 1];        //сдвигаем всё что после удаляемого элемента на 1 влево
         }
