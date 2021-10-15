@@ -1,7 +1,7 @@
 package ru.mirea.task14;
 import java.lang.*;
 import java.util.*;
-public class Drunkard {
+public class DrunkardQueue {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Queue<Integer> first = new ArrayDeque<>();
