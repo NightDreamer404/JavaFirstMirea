@@ -67,7 +67,7 @@ public class MyArrayList <T>{
     private void resize(int newLength)
     {
         Object[] newArray = new Object[newLength];
-        System.arraycopy(array, 0, newArray, 0, itemPointer);       //исходный массив, начальная позиция исх. массива, новый массив, позиция для вставки в новый массив, конец исх массива
+        System.arraycopy(array, 0, newArray, 0, itemPointer); //исходный массив, начальная позиция исх. массива, новый массив, позиция для вставки в новый массив, конец исх массива
         array = newArray;
     }
 
