@@ -1,14 +1,13 @@
 package ru.mirea.task14;
 import java.lang.*;
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Scanner;
+import java.util.LinkedList;
 
-public class DrunkardDequeue {
+public class DrunkardLinkedList {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Deque<Integer> first = new ArrayDeque<>();
-        Deque<Integer> second = new ArrayDeque<>();
+        LinkedList<Integer> first = new LinkedList<>();
+        LinkedList<Integer> second = new LinkedList<>();
         for (int i = 0; i < 5; i++) {
             first.addLast(scan.nextInt());
         }

@@ -70,7 +70,8 @@ public class DrunkardQueue {
 
         if (first.isEmpty()) {
             System.out.println("second " + count);
-        } else
+        } else {
             System.out.println("first " + count);
+        }
     }
 }

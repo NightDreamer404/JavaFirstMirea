@@ -1,39 +1,41 @@
 package ru.mirea.task14;
 import java.lang.*;
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Scanner;
-
-public class DrunkardDequeue {
-    public static void main(String[] args) {
+import java.util.Stack;
+public class DrunkardStack {
+    public static void main(String[] args)
+    {
         Scanner scan = new Scanner(System.in);
-        Deque<Integer> first = new ArrayDeque<>();
-        Deque<Integer> second = new ArrayDeque<>();
+        Stack<Integer> fpStack = new Stack<>();
+        Stack<Integer> spStack = new Stack<>();
         for (int i = 0; i < 5; i++) {
-            first.addLast(scan.nextInt());
+            fpStack.push(scan.nextInt());
         }
         for (int i = 0; i < 5; i++)
         {
-            second.addLast(scan.nextInt());
+            spStack.push(scan.nextInt());
         }
         int count = 0;
 
-        while (first.size() > 0 && second.size() > 0) {
-            int firstVal = first.pollFirst();
-            int secondVal = second.pollFirst();
+        while (!(fpStack.isEmpty()) && !(spStack.isEmpty()))
+        {
+            int firstVal = fpStack.get(0);
+            int secondVal = spStack.get(0);
+            fpStack.removeElementAt(0);
+            spStack.removeElementAt(0);
             switch (firstVal)
             {
                 case 0:
                 {
                     if (secondVal == 9)
                     {
-                        first.addLast(firstVal);
-                        first.addLast(secondVal);
+                        fpStack.push(firstVal);
+                        fpStack.push(secondVal);
                     }
                     else
                     {
-                        second.addLast(firstVal);
-                        second.addLast(secondVal);
+                        spStack.push(firstVal);
+                        spStack.add(secondVal);
                     }
                     break;
                 }
@@ -41,24 +43,24 @@ public class DrunkardDequeue {
                 {
                     if (secondVal == 0)
                     {
-                        second.addLast(firstVal);
-                        second.addLast(secondVal);
+                        spStack.push(firstVal);
+                        spStack.push(secondVal);
                     }
                     else
                     {
-                        first.addLast(firstVal);
-                        first.addLast(secondVal);
+                        fpStack.push(firstVal);
+                        fpStack.push(secondVal);
                     }
                     break;
                 }
                 default:
                 {
                     if (firstVal > secondVal) {
-                        first.addLast(firstVal);
-                        first.addLast(secondVal);
+                        fpStack.push(firstVal);
+                        fpStack.push(secondVal);
                     } else if (secondVal > firstVal) {
-                        second.addLast(firstVal);
-                        second.addLast(secondVal);
+                        spStack.push(firstVal);
+                        spStack.push(secondVal);
                     }
                     break;
                 }
@@ -67,11 +69,11 @@ public class DrunkardDequeue {
             count++;
             if (count == 106) {
                 System.out.println("botva");
-                return;
+                break;
             }
         }
 
-        if (first.isEmpty()) {
+        if (fpStack.isEmpty()) {
             System.out.println("second " + count);
         } else {
             System.out.println("first " + count);
