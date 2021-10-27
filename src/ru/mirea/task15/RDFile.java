@@ -4,7 +4,8 @@ import java.io.*;
 public class RDFile {
     public static void main(String[] args) {
 
-        try (FileInputStream FINObj = new FileInputStream("D://test//msg.txt")) {
+        try (FileInputStream FINObj = new FileInputStream("D://test//msg.txt"))     //класс считывания из файла
+        {
             int i;
             while ((i = FINObj.read()) != -1) {
 
@@ -14,5 +15,7 @@ public class RDFile {
 
             System.out.println(ex.getMessage());
         }
+        System.out.println('\n');
+        System.out.println("The file has been read");
     }
 }

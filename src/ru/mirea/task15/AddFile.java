@@ -8,7 +8,7 @@ public class AddFile {
         Scanner scan = new Scanner(System.in);
         File file = new File("D://test//msg.txt");
         String text = scan.nextLine(); // строка для записи
-        try(FileOutputStream FOSObj = new FileOutputStream(file, true))
+        try(FileOutputStream FOSObj = new FileOutputStream(file, true)) //класс записи в файл
         {
             // перевод строки в байты
             byte[] buf = text.getBytes();
