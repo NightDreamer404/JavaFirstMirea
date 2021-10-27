@@ -7,7 +7,7 @@ public class RDFile {
         try (FileInputStream FINObj = new FileInputStream("D://test//msg.txt"))     //класс считывания из файла
         {
             int i;
-            while ((i = FINObj.read()) != -1) {
+            while ((i = FINObj.read()) != -1) {     //если в потоке нет данных для считывания
 
                 System.out.print((char) i);
             }
