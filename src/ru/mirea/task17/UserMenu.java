@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class UserMenu {
     private int returnOption = 0;
     private int timeHlp = 1;
+    private int clientIndex;
     public void showMenu() {
         System.out.println("Вас приветствует меню пользователя! Пожалуйста, выберите один из интересующих вас пунктов, введя соответствующее название.");
         System.out.println("Для этого введите название интересующего вас пункта, указанное в скобках");
@@ -18,7 +19,14 @@ public class UserMenu {
         System.out.println("7) Конвертация валюты (Конвертация)");
         System.out.println("0) Возврат в предыдущее меню (Возврат)");
     }
-
+    public void setClientIndex(int clientIndex)
+    {
+        this.clientIndex = clientIndex;
+    }
+    public int getClientIndex()
+    {
+        return clientIndex;
+    }
     public int getReturnOption()
     {
         return returnOption;
@@ -67,6 +75,7 @@ public class UserMenu {
             }
             case Refill: {
                 System.out.println("Счёт пополнен");
+
                 //...
                 returnOption =0;
                 break;

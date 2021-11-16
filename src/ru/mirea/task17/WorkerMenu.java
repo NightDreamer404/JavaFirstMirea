@@ -24,6 +24,7 @@ public class WorkerMenu {
         this.returnOption = returnOption;
     }
     public void searchOption(String choice) {
+        timeHlp = 0;
         WorkerOptions op = null;
         WorkerOptions[] enums = WorkerOptions.values();
         for (int i = 0; i < enums.length; i++) {
@@ -31,6 +32,10 @@ public class WorkerMenu {
                 op = enums[i];
                 break;
             }
+        }
+        if (op == null)
+        {
+            op = WorkerOptions.valueOf("Error");
         }
         workerSwitcher(op);
     }
@@ -55,6 +60,7 @@ public class WorkerMenu {
             case Return: {
                 System.out.println("Возврат");
                 returnOption = 1;
+                timeHlp = 1;
                 break;
             }
             case Error: {
