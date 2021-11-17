@@ -13,8 +13,8 @@ public class UserRegulation {
 
     public void showInfo()
     {
-        System.out.println("Список пользвателей: ");
-        getUserList();
+        System.out.println("Список пользователей: ");
+        getUserListText();
         System.out.print("\n");
         System.out.println("Выберете одну из опций ниже (буква)");
         System.out.println("A. Добавить нового пользователя");
@@ -83,14 +83,21 @@ public class UserRegulation {
                 System.out.println("Повторите ввод");
             }
         }
+        user.createAccount("Rub");
+        System.out.println("Счёт в рублях открыт");
+        System.out.print("\n");
         userList.add(user);
     }
-    public void getUserList()
+    public void getUserListText()
     {
         for(int i = 0; i < userList.size(); i++)
         System.out.println("Пользователь №" + (i+1) + " " + userList.get(i));
         if(userList.isEmpty())
             System.out.println("Пользователей нет");
+    }
+    public ArrayList<User> getUserList()
+    {
+        return userList;
     }
     public void removeUser(int index)
     {

@@ -1,6 +1,6 @@
 package ru.mirea.task21.MenuUpgrade;
 
-import ru.mirea.test.UserMenu;
+import ru.mirea.task17.UserMenu;
 import ru.mirea.task17.WorkerMenu;
 import ru.mirea.task21.UsReg.UsRegMenu;
 
@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
+
+import static java.lang.System.exit;
 
 public class MainMenu {
     public void getInfo()
@@ -55,6 +57,7 @@ public class MainMenu {
                     System.out.print("\n");
                     int bufUserIndex = usRegMenu.regMenuOption();
                     menuUser.setClientIndex(bufUserIndex);
+                    menuUser.setUserList(usRegMenu.getUserList());
                 }
 
 
@@ -94,7 +97,8 @@ public class MainMenu {
                 break;
             }
             default: {
-                break;
+                System.out.println("Ошибка ввода, аварийное завершение");
+                exit(0);
             }
             }
         }
