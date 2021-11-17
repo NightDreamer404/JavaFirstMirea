@@ -1,5 +1,8 @@
 package ru.mirea.task17;
+import ru.mirea.task21.User;
+
 import java.lang.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -7,8 +10,9 @@ public class UserMenu {
     private int returnOption = 0;
     private int timeHlp = 1;
     private int clientIndex;
+    private ArrayList<User> userList;
     public void showMenu() {
-        System.out.println("Вас приветствует меню пользователя! Пожалуйста, выберите один из интересующих вас пунктов, введя соответствующее название.");
+        System.out.println("Добрый день, " + userList.get(getClientIndex()).getName() + "! " + "Пожалуйста, выберите один из интересующих вас пунктов, введя соответствующее название.");
         System.out.println("Для этого введите название интересующего вас пункта, указанное в скобках");
         System.out.println("1) Заявка на кредит/ипотеку (Заявка)");
         System.out.println("2) Оформление вклада (Вклад)");
@@ -21,7 +25,11 @@ public class UserMenu {
     }
     public void setClientIndex(int clientIndex)
     {
-        this.clientIndex = clientIndex;
+        this.clientIndex = clientIndex-1;
+    }
+    public void setUserList(ArrayList<User> userList)
+    {
+        this.userList = userList;
     }
     public int getClientIndex()
     {
@@ -54,6 +62,7 @@ public class UserMenu {
     }
 
     public void userSwitcher(UserOptions op) {
+        Scanner read = new Scanner(System.in);
         switch (op) {
             case Application: {
                 System.out.println("Заявка подана");
@@ -74,8 +83,21 @@ public class UserMenu {
                 break;
             }
             case Refill: {
-                System.out.println("Счёт пополнен");
-
+                //System.out.println("Счёт пополнен");
+                boolean repeater = true;
+                while(repeater) {
+                    System.out.println("Введите кол-во вносимых средств и валюту (Rub, если не открыт счет на другую валюту)");
+                    try {
+                        userList.get(getClientIndex()).addMoney(read.nextInt(), read.next());
+                        repeater = false;
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("Некорректные данные");
+                    }
+                }
+                System.out.println("Средства успешно зачислены");
+                userList.get(getClientIndex()).getAccountList();
+                System.out.print("\n");
                 //...
                 returnOption =0;
                 break;
