@@ -11,11 +11,11 @@ public class UsRegMenu extends UserRegulation {
             showInfo();
             Scanner read = new Scanner(System.in);
             switch (read.next()) {
-                case "A": {
+                case "А": {
                     addUser();
                     break;
                 }
-                case "B": {
+                case "Б": {
                     if(userList.isEmpty())
                     {
                         System.out.println("Список пользователей пуст, добавьте хотя бы одного пользователя");
@@ -38,7 +38,7 @@ public class UsRegMenu extends UserRegulation {
                     }
                     break;
                 }
-                case "C": {
+                case "В": {
                     if(userList.isEmpty())
                     {
                         System.out.println("Список пользователей пуст, добавьте хотя бы одного пользователя");

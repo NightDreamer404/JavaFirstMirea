@@ -1,6 +1,5 @@
 package ru.mirea.task21.MenuUpgrade;
 
-import ru.mirea.task17.UserMenu;
 import ru.mirea.task17.WorkerMenu;
 import ru.mirea.task21.UsReg.UsRegMenu;
 

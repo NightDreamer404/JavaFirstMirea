@@ -16,10 +16,10 @@ public class UserRegulation {
         System.out.println("Список пользователей: ");
         getUserListText();
         System.out.print("\n");
-        System.out.println("Выберете одну из опций ниже (буква)");
+        System.out.println("Выберете одну из опций ниже (буква кириллицы)");
         System.out.println("A. Добавить нового пользователя");
-        System.out.println("B. Выбрать существующего пользователя");
-        System.out.println("C. Удалить пользователя");
+        System.out.println("Б. Выбрать существующего пользователя");
+        System.out.println("В. Удалить пользователя");
     }
 
     public int searchUser(int index)
