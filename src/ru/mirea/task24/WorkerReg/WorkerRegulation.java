@@ -59,15 +59,4 @@ public class WorkerRegulation extends Worker {
             }
         }
     }
-    public boolean checkWorkerKey(String key)
-    {
-        boolean approved = false;
-        Pattern pattern = Pattern.compile(logKey);
-        Matcher matcher = pattern.matcher(key);
-        if(matcher.find())
-        {
-            approved = true;
-        }
-        return approved;
-    }
 }
