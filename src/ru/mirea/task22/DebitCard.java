@@ -6,12 +6,14 @@ public class DebitCard implements Card{
     private int CVV;
     private String color;
     private String type;
+    private String status;
     public DebitCard()
     {
         cardNum = (long) (2500000 + Math.random() * 9999999);
         CVV = (int) (100 + Math.random() * 999);
-        color = "зелёный";
-        type = "дебитовая карта";
+        color = "голубой";
+        type = "кредитная карта";
+        status = "активная";
     }
     @Override
     public long getCardNum()
@@ -35,9 +37,13 @@ public class DebitCard implements Card{
     {
         return type;
     }
+
+    @Override
+    public String getCardStatus() { return status; }
+
     @Override
     public void getCardInfo()
     {
-        System.out.println("Тип карты: " + getCardType() + "; Расцветка: " + getCardColor() + "; Номер карты: " + getCardNum() + "; CVV: " + getCardCVV());
+        System.out.println("Тип карты: " + getCardType() + "; Расцветка: " + getCardColor() + "; Номер карты: " + getCardNum() + "; CVV: " + getCardCVV() + "; Статус: " +getCardStatus());
     }
 }

@@ -5,12 +5,14 @@ public class VirtualCard implements Card{
     private int CVV;
     private String color;
     private String type;
+    private String status;
     public VirtualCard()
     {
         cardNum = (long) (2500000 + Math.random() * 9999999);
         CVV = (int) (100 + Math.random() * 999);
-        color = "серебристый";
-        type = "виртуальная карта";
+        color = "голубой";
+        type = "кредитная карта";
+        status = "активная";
     }
     @Override
     public long getCardNum()
@@ -34,9 +36,13 @@ public class VirtualCard implements Card{
     {
         return type;
     }
+
+    @Override
+    public String getCardStatus() { return status; }
+
     @Override
     public void getCardInfo()
     {
-        System.out.println("Тип карты: " + getCardType() + "; Расцветка: " + getCardColor() + "; Номер карты: " + getCardNum() + "; CVV: " + getCardCVV());
+        System.out.println("Тип карты: " + getCardType() + "; Расцветка: " + getCardColor() + "; Номер карты: " + getCardNum() + "; CVV: " + getCardCVV() + "; Статус: " +getCardStatus());
     }
 }
