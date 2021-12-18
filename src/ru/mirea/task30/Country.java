@@ -14,17 +14,17 @@ public class Country {
 
     public Country(String name, double population, String capital, WorldParts worldPart)
     {
+        if(name != null && !name.isEmpty() && population > 0 && capital != null && !capital.isEmpty() && worldPart != null) {
+            this.name = name;
+            this.population = population;
+            this.capital = capital;
+            this.worldPart = worldPart;
 
-        this.name = name;
-        this.population = population;
-        this.capital = capital;
-        this.worldPart = worldPart;
-
-        if (!hasCountry())
-        {
-            countId++;
-            this.id = countId;
-            allCountries.put(id, this);
+            if (!hasCountry()) {
+                countId++;
+                this.id = countId;
+                allCountries.put(id, this);
+            }
         }
     }
 
